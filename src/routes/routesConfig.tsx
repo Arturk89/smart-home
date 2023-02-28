@@ -15,6 +15,10 @@ export const routesConfig = createBrowserRouter([
     path: routes.HOME.path,
     element: <AuthGuard><routes.HOME.Component /></AuthGuard>,
     children: [
+      {
+        path: routes.HOME_PAGE.path,
+        element: <routes.HOME_PAGE.Component />
+      }
     ]
   }
 ])

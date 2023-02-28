@@ -1,4 +1,5 @@
 import { create } from '@mui/material/styles/createTransitions'
+import path from 'path'
 import { lazy } from 'react'
 
 export type UserRoleDetails = {
@@ -32,6 +33,7 @@ export const Roles: UserRole = {
 
 type PATH_NAMES =
   | 'HOME'
+  | 'HOME_PAGE'
   | 'LOGIN'
   | 'PAGE_NOT_FOUND'
 
@@ -58,6 +60,11 @@ export const pathNames: PathNames = {
     path: '/',
     roles: [Roles.ADMIN, Roles.PUBLIC]
   },
+  HOME_PAGE: {
+    name: 'Home-Page',
+    path: '/home',
+    roles: [Roles.ADMIN, Roles.PUBLIC]
+  },
   LOGIN: {
     name: 'Login',
     path: '/login',
@@ -65,6 +72,7 @@ export const pathNames: PathNames = {
   }
 }
 
+const MainLayout = lazy(() => import('../layouts/MainLayout'))
 const Login = lazy(() => import('../containers/Login/Login'))
 const Home = lazy(() => import('../containers/HomePage/Home'))
 const PageNotFound = lazy(() => import('../containers/NotFound/PageNotFound'))
@@ -88,6 +96,7 @@ function checkIfRouteEnabled (route: string) {
 
 export const routes: RouteObject = {
   LOGIN: createRoute('login-route', pathNames.LOGIN.name, pathNames.LOGIN.path, checkIfRouteEnabled(pathNames.LOGIN.name), pathNames.LOGIN.roles, Login),
-  HOME: createRoute('home-route', pathNames.HOME.name, pathNames.HOME.path, checkIfRouteEnabled(pathNames.HOME.name), pathNames.HOME.roles, Home),
+  HOME: createRoute('home-route', pathNames.HOME.name, pathNames.HOME.path, checkIfRouteEnabled(pathNames.HOME.name), pathNames.HOME.roles, MainLayout),
+  HOME_PAGE: createRoute('home-page', pathNames.HOME_PAGE.name, pathNames.HOME_PAGE.path, checkIfRouteEnabled(pathNames.HOME_PAGE.name), pathNames.HOME_PAGE.roles, Home),
   PAGE_NOT_FOUND: createRoute('page-not-found', pathNames.PAGE_NOT_FOUND.name, pathNames.PAGE_NOT_FOUND.path, checkIfRouteEnabled(pathNames.PAGE_NOT_FOUND.name), pathNames.PAGE_NOT_FOUND.roles, PageNotFound)
 }
