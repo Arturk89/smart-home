@@ -30,7 +30,7 @@ export const pathNames: PathNames = {
     }
 }
 
-const MainLayout = lazy(() => import('../layouts/MainLayout'))
+const MainLayout = lazy(() => import('../layouts/MainLayout/MainLayout'))
 const Login = lazy(() => import('../containers/Login/Login'))
 const Home = lazy(() => import('../containers/HomePage/Home'))
 const PageNotFound = lazy(() => import('../containers/NotFound/PageNotFound'))

@@ -8,6 +8,9 @@ module.exports = {
             lg: '976px',
             xl: '1440px'
         },
+        colors: {
+            white: '#fcffff'
+        },
         fontFamily: {
             sans: ['sans-serif'],
             serif: ['serif']
