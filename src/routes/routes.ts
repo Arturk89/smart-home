@@ -1,53 +1,11 @@
-import { create } from '@mui/material/styles/createTransitions'
-import path from 'path'
 import { lazy } from 'react'
-
-export type UserRoleDetails = {
-  name: string,
-  id: number
-}
-
-type UserRole = {
-  [name: string]: UserRoleDetails
-}
-
-type SingleRouteObject = {
-  key: string
-  title: string
-  path: string
-  enabled: boolean
-  Component: React.ComponentType
-  role: UserRoleDetails[]
-}
-
-export const Roles: UserRole = {
-  ADMIN: {
-    name: 'ADMIN',
-    id: 1
-  },
-  PUBLIC: {
-    name: 'CLIENT',
-    id: 2
-  }
-} as const
-
-type PATH_NAMES =
-  | 'HOME'
-  | 'HOME_PAGE'
-  | 'LOGIN'
-  | 'PAGE_NOT_FOUND'
-
-type RouteObject = {
-  [name in PATH_NAMES]: SingleRouteObject
-}
-  
-type PathNames = {
-  [name: string]: {
-    name: string,
-    path: string,
-    roles: UserRoleDetails[]
-  }
-}
+import { Roles } from './routes.roles'
+import { 
+  PathNames, 
+  RouteObject,
+  SingleRouteObject,
+  UserRoleDetails 
+} from './routes.types'
 
 export const pathNames: PathNames = {
   PAGE_NOT_FOUND: {
