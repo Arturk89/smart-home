@@ -3,23 +3,26 @@ import AuthGuard from '../auth/AuthGuard'
 import { routes } from './routes'
 
 export const routesConfig = createBrowserRouter([
-  {
-    path: routes.LOGIN.path,
-    element: <routes.LOGIN.Component />
-  },
-  {
-    path: routes.PAGE_NOT_FOUND.path,
-    element: <routes.PAGE_NOT_FOUND.Component />
-  },
-  {
-    path: routes.HOME.path,
-    element: <AuthGuard><routes.HOME.Component /></AuthGuard>,
-    children: [
-      {
-        path: routes.HOME_PAGE.path,
-        element: <routes.HOME_PAGE.Component />
-      }
-    ]
-  }
+    {
+        path: routes.LOGIN.path,
+        element: <routes.LOGIN.Component />
+    },
+    {
+        path: routes.PAGE_NOT_FOUND.path,
+        element: <routes.PAGE_NOT_FOUND.Component />
+    },
+    {
+        path: routes.HOME.path,
+        element: (
+            <AuthGuard>
+                <routes.HOME.Component />
+            </AuthGuard>
+        ),
+        children: [
+            {
+                path: routes.HOME_PAGE.path,
+                element: <routes.HOME_PAGE.Component />
+            }
+        ]
+    }
 ])
-
