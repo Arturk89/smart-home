@@ -1,11 +1,11 @@
-import { lazy } from 'react';
-import { Roles } from './routes.roles';
+import { lazy } from 'react'
+import { Roles } from './routes.roles'
 import {
     PathNames,
     RouteObject,
     SingleRouteObject,
     UserRoleDetails
-} from './routes.types';
+} from './routes.types'
 
 export const pathNames: PathNames = {
     PAGE_NOT_FOUND: {
@@ -28,12 +28,12 @@ export const pathNames: PathNames = {
         path: '/login',
         roles: [Roles.ADMIN, Roles.PUBLIC]
     }
-};
+}
 
-const MainLayout = lazy(() => import('../layouts/MainLayout'));
-const Login = lazy(() => import('../containers/Login/Login'));
-const Home = lazy(() => import('../containers/HomePage/Home'));
-const PageNotFound = lazy(() => import('../containers/NotFound/PageNotFound'));
+const MainLayout = lazy(() => import('../layouts/MainLayout'))
+const Login = lazy(() => import('../containers/Login/Login'))
+const Home = lazy(() => import('../containers/HomePage/Home'))
+const PageNotFound = lazy(() => import('../containers/NotFound/PageNotFound'))
 
 function createRoute(
     key: string,
@@ -50,13 +50,13 @@ function createRoute(
         enabled,
         Component,
         role
-    };
+    }
 }
 
 function checkIfRouteEnabled(route: string) {
     // logic to checking route
-    if (route) return true;
-    return true;
+    if (route) return true
+    return true
 }
 
 export const routes: RouteObject = {
@@ -92,4 +92,4 @@ export const routes: RouteObject = {
         pathNames.PAGE_NOT_FOUND.roles,
         PageNotFound
     )
-};
+}
