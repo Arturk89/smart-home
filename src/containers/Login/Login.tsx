@@ -1,6 +1,7 @@
  import React, { useState } from 'react'
  import styles from './login.module.css'
  import { TextInput, Button } from '@mantine/core'
+ import { IconKey } from '@tabler/icons-react'
 
  function LoginWrapper({ children }: { children: React.ReactNode }) {
     return (
@@ -30,7 +31,7 @@
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setLogin(l => ({ ...l, password: e.target.value }))} 
                     withAsterisk 
                 />
-                <Button leftIcon={<IconDatabase size="1rem" />}>
+                <Button leftIcon={<IconKey size="1rem" />}>
                     Connect to database
                 </Button>
             </div>
