@@ -11,21 +11,20 @@ export const mantineTheme: MantineThemeOverride = {
         light: 5,
         dark: 9
     },
-    colors: {
-        gray: [
-            '#e9ebee',
-            '#e5e9eb',
-            '#C0C6C9',
-            '#dfe3e6',
-            '#dfe3e6',
-            '#c9cccf',
-            '#b2b6b8',
-            '#9c9fa1',
-            '#86888a',
-            '#707273'
-        ]
-    },
-    primaryColor: 'gray',
+    // colors: {
+    //     gray: [
+    //         '#e9ebee',
+    //         '#e5e9eb',
+    //         '#C0C6C9',
+    //         '#dfe3e6',
+    //         '#dfe3e6',
+    //         '#c9cccf',
+    //         '#b2b6b8',
+    //         '#9c9fa1',
+    //         '#86888a',
+    //         '#707273'
+    //     ]
+    // },
     lineHeight: 2,
     fontSizes: {
         xs: '0.6rem',

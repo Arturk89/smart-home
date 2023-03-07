@@ -1,20 +1,8 @@
-import React from 'react'
-import { TextInput, Button, Text } from '@mantine/core'
+import { Button, Text, Title, Box, TextInput } from '@mantine/core'
 import { mailRegex } from 'config/regex'
 import { useForm } from '@mantine/form'
+import { inputs } from './constants/inputs'
 
-const authInputs = [
-    {
-        name: 'email',
-        label: 'e-mail',
-        required: true
-    },
-    {
-        name: 'password',
-        label: 'password',
-        required: true
-    }
-]
 export function LoginInputs() {
     const form = useForm({
         initialValues: { email: '', password: '' },
@@ -26,21 +14,21 @@ export function LoginInputs() {
     })
 
     return (
-        <div style={{ padding: '2rem', width: '300px', textAlign: 'left' }}>
+        <Box>
             <form onSubmit={form.onSubmit(console.log)}>
-                {authInputs.map((field) => (
-                    <React.Fragment key={field.name}>
-                        <TextInput
-                            label={field.label}
-                            withAsterisk={field.required}
-                            {...form.getInputProps(field.name)}
-                        />
-                    </React.Fragment>
+                <Title order={1}>Log in to your account</Title>
+                {inputs.map((field) => (
+                    <TextInput
+                        key={field.name}
+                        label={field.label}
+                        withAsterisk={field.required}
+                        {...form.getInputProps(field.name)}
+                    />
                 ))}
                 <Button type="submit">
                     <Text color="black">Log in</Text>
                 </Button>
             </form>
-        </div>
+        </Box>
     )
 }
