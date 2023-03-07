@@ -24,7 +24,10 @@
       "auth/*": ["auth/*"],
       "config/*": ["config/*"],
       "hooks/*": ["hooks/*"],
-      "slices/*": ["slices/*"]
+      "slices/*": ["slices/*"],
+      "containers/*": ["containers/*"],
+      "components/*": ["components/*"],
+      "layouts/*": ["layouts/*"]
     }
   },
   "include": [
