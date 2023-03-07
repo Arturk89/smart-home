@@ -14,7 +14,12 @@ export function LoginInputs() {
     })
 
     return (
-        <Box>
+        <Box
+            sx={{
+                border: '2px solid #eaeaea',
+                borderRadius: '5px',
+                background: 'rgba(188, 196, 203, 0.75)'
+            }}>
             <form onSubmit={form.onSubmit(console.log)}>
                 <Title order={1}>Log in to your account</Title>
                 {inputs.map((field) => (
@@ -25,9 +30,18 @@ export function LoginInputs() {
                         {...form.getInputProps(field.name)}
                     />
                 ))}
-                <Button type="submit">
-                    <Text color="black">Log in</Text>
-                </Button>
+                <Box
+                    sx={{
+                        borderTop: '1px solid #fff',
+                        padding: '10px'
+                    }}>
+                    <Button type="submit">
+                        <Text color="black">Log in</Text>
+                    </Button>
+                    <Button>
+                        <Text color="black">Log in with PIN</Text>
+                    </Button>
+                </Box>
             </form>
         </Box>
     )
