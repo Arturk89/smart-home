@@ -1,6 +1,6 @@
  import React, { useState } from 'react'
  import styles from './login.module.css'
- import { TextInput } from '@mantine/core'
+ import { TextInput, Button } from '@mantine/core'
 
  function LoginWrapper({ children }: { children: React.ReactNode }) {
     return (
@@ -14,7 +14,7 @@
     const [login, setLogin] = useState({ email: '', password: '' })
     return (
         <LoginWrapper>
-            <div>
+            <div style={{ padding: '2rem', border: '1px solid black' }}>
                 <TextInput 
                     label="e-mail"
                     value={login.email} 
@@ -30,6 +30,9 @@
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setLogin(l => ({ ...l, password: e.target.value }))} 
                     withAsterisk 
                 />
+                <Button leftIcon={<IconDatabase size="1rem" />}>
+                    Connect to database
+                </Button>
             </div>
         </LoginWrapper>
     )
