@@ -22,6 +22,9 @@
     "baseUrl": "./src",
     "paths": {
       "auth/*": ["auth/*"],
+      "config/*": ["config/*"],
+      "hooks/*": ["hooks/*"],
+      "slices/*": ["slices/*"]
     }
   },
   "include": [
