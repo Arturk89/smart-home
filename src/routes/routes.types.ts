@@ -30,4 +30,4 @@ export type PathNames = {
     }
 }
 
-export type PATH_NAMES = 'HOME' | 'HOME_PAGE' | 'LOGIN' | 'PAGE_NOT_FOUND'
+export type PATH_NAMES = 'ROOT' | 'HOME_PAGE' | 'LOGIN' | 'PAGE_NOT_FOUND' | 'DASHBOARD'
