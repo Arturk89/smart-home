@@ -1,10 +1,10 @@
 import { Outlet } from 'react-router-dom'
-import styles from './mainLayout.module.css'
+import Background from 'components/ui/Background/Background'
 
 export default function MainLayout() {
     return (
-        <div className={styles.background}>
+        <Background>
             <Outlet />
-        </div>
+        </Background>
     )
 }
