@@ -18,7 +18,9 @@ export function LoginPlainInputs({ form, submitLogin }: Props) {
                 <Box className="flex flex-col gap-6">
                     {inputs.map((field) => (
                         <TextInput
+                            variant="filled"
                             key={field.name}
+                            type={field.type}
                             label={field.label}
                             withAsterisk={field.required}
                             {...form.getInputProps(field.name)}
