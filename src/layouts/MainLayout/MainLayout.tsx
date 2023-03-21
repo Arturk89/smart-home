@@ -1,10 +1,15 @@
 import { Outlet } from 'react-router-dom'
-import styles from './mainLayout.module.css'
+import Background from 'components/ui/Background/Background'
+import { pathNames } from 'routes/routes'
+import { useRedirect } from 'hooks/useRedirect'
 
 export default function MainLayout() {
+    const { ROOT, LOGIN } = pathNames
+    useRedirect(ROOT.path, LOGIN.path, true)
+
     return (
-        <div className={styles.background}>
+        <Background>
             <Outlet />
-        </div>
+        </Background>
     )
 }
