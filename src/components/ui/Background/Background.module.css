@@ -2,19 +2,19 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    background: linear-gradient(13deg, #a8b4b8, #8393a1, #778794, #62778b);
-    background-size: 800% 800%;
+    background: linear-gradient(#475569, #d1d5db, #f9fafb);
+    background-size: 500% 500%;
     animation: backgroundAnimation 11s ease infinite;
 }
 
 @keyframes backgroundAnimation {
     0% {
-        background-position: 0% 79%;
+        background-position: 100% 0%;
     }
     50% {
-        background-position: 100% 22%;
+        background-position: 100% 10%;
     }
     100% {
-        background-position: 0% 79%;
+        background-position: 100% 0%;
     }
 }

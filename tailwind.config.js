@@ -3,13 +3,10 @@ module.exports = {
     content: ['./src/**/*.{js,jsx,ts,tsx}'],
     theme: {
         screens: {
-            sm: '480px',
-            md: '768px',
-            lg: '976px',
-            xl: '1440px'
-        },
-        colors: {
-            white: '#fcffff'
+            sm: '768px',
+            md: '1100px',
+            lg: '1440px',
+            xl: '1920px'
         },
         fontFamily: {
             sans: ['sans-serif'],
