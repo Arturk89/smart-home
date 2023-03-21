@@ -7,10 +7,12 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { pathNames } from 'routes/routes'
 import { LoginPlainInputs } from './components/PlainInputs.component'
+import { auth } from '../../firebase'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 
 export type LoginForm = {
-  email: string
-  password: string
+    email: string
+    password: string
 }
 
 export function PlainInputs() {
@@ -29,18 +31,22 @@ export function PlainInputs() {
     })
 
     const submitLogin = (data: LoginForm) =>
-      dispatch(setLoggedUser({ id: 'nanana', name: data.email }))
+        signInWithEmailAndPassword(auth, data.email, data.password)
+            .then((res) =>
+                dispatch(
+                    setLoggedUser({
+                        id: res.user.uid,
+                        name: res.user.email || ''
+                    })
+                )
+            )
+            .catch((err) => console.error(err))
 
     useEffect(() => {
-      if (user) {
-        navigate(DASHBOARD.path, { replace: true })
-      }
+        if (user) {
+            navigate(DASHBOARD.path, { replace: true })
+        }
     }, [user])
-      
-    return (
-        <LoginPlainInputs
-            form={form}
-            submitLogin={submitLogin}
-        />
-    )
+
+    return <LoginPlainInputs form={form} submitLogin={submitLogin} />
 }

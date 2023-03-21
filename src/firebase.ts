@@ -6,14 +6,7 @@ import { getFirestore } from '@firebase/firestore'
 import { getAuth } from 'firebase/auth'
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: 'AIzaSyAEVo3hkHzthsQaG4e-ZzsyuhFU84HRBEo',
-    authDomain: 'smart-home-90a3f.firebaseapp.com',
-    projectId: 'smart-home-90a3f',
-    storageBucket: 'smart-home-90a3f.appspot.com',
-    messagingSenderId: '214880211173',
-    appId: '1:214880211173:web:523b9c86a00a8b2fe3c40c'
-}
+const firebaseConfig = {}
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig)
