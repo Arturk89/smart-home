@@ -8,7 +8,6 @@
         "@mantine/core": "^6.0.0",
         "@mantine/form": "^6.0.0",
         "@mantine/hooks": "^6.0.0",
-        "@mui/material": "^5.11.11",
         "@reduxjs/toolkit": "^1.9.3",
         "@tabler/icons": "^2.8.0",
         "@testing-library/jest-dom": "^5.16.5",
