@@ -9,8 +9,8 @@ import { pathNames } from 'routes/routes'
 import { LoginPlainInputs } from './components/PlainInputs.component'
 
 export type LoginForm = {
-  email: string
-  password: string
+    email: string
+    password: string
 }
 
 export function PlainInputs() {
@@ -29,18 +29,13 @@ export function PlainInputs() {
     })
 
     const submitLogin = (data: LoginForm) =>
-      dispatch(setLoggedUser({ id: 'nanana', name: data.email }))
+        dispatch(setLoggedUser({ id: 'nanana', name: data.email }))
 
     useEffect(() => {
-      if (user) {
-        navigate(DASHBOARD.path, { replace: true })
-      }
+        if (user) {
+            navigate(DASHBOARD.path, { replace: true })
+        }
     }, [user])
-      
-    return (
-        <LoginPlainInputs
-            form={form}
-            submitLogin={submitLogin}
-        />
-    )
+
+    return <LoginPlainInputs form={form} submitLogin={submitLogin} />
 }
