@@ -6,6 +6,10 @@ export const TextInputTheme = {
             label: {
                 color: theme.colors.gray[2],
                 fontWeight: 300
+            },
+            input: {
+                lineHeight: 1,
+                paddingTop: '1px'
             }
         })
     }

@@ -20,6 +20,15 @@ export const ButtonTheme = {
                 root: {
                     color: theme.colors.gray[9]
                 }
+            }),
+            round: (theme: MantineTheme) => ({
+                root: {
+                    borderRadius: '50%',
+                    border: '1px solid',
+                    borderColor: theme.colors.gray[2],
+                    aspectRatio: '1/1',
+                    padding: '.5rem'
+                }
             })
         }
     }
