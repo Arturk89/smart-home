@@ -21,11 +21,11 @@ export function PlainInputs() {
 
     const form = useForm<LoginForm>({
         initialValues: { email: '', password: '' },
-
         validate: {
             email: (value) => (mailRegex.test(value) ? null : 'Invalid email'),
             password: (value) => (value.length < 2 ? 'Invalid password' : null)
-        }
+        },
+        clearInputErrorOnChange: true
     })
 
     const submitLogin = (data: LoginForm) =>
