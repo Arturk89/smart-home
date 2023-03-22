@@ -1,12 +1,14 @@
 //https://redux-toolkit.js.org/tutorials/typescript
 import { configureStore } from '@reduxjs/toolkit'
 import user from 'slices/userSlice'
-import { useDispatch } from 'react-redux'
+import login from 'slices/loginSlice'
+// import { useDispatch } from 'react-redux'
 
 export const store = configureStore({
-  reducer: {
-    user
-  }
+    reducer: {
+        user,
+        login
+    }
 })
 
 export type RootState = ReturnType<typeof store.getState>

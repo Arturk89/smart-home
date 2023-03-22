@@ -1,4 +1,4 @@
-import { IconAt, IconKey } from '@tabler/icons-react'
+import { IconAt, IconLock } from '@tabler/icons-react'
 
 export const inputs = [
     {
@@ -13,6 +13,6 @@ export const inputs = [
         label: 'Password',
         type: 'password',
         required: true,
-        icon: IconKey
+        icon: IconLock
     }
 ]
